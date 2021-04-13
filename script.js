@@ -42,3 +42,7 @@ switch (randomSignNum) {
 }
 
 console.log(`The mystical sign that embodies you is a ${sign}.`);
+
+let luckyNumber=Math.floor(Math.random()*100)+1;
+
+console.log(`Your lucky number is ${luckyNumber}`);
