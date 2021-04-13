@@ -120,5 +120,97 @@ switch (scaryMessageNum) {
 }   
 
 console.log(`The spirits have gathered to share this important message with you:`);
-console.log(ominousMessage);
+console.log(`"${ominousMessage}"`);
 
+//a day that will bring some kind of luck
+let luckNum=(Math.floor(Math.random()*6));
+let typeOfLuck="";
+switch (luckNum) {
+    case 0:
+        typeOfLuck="very bad luck";
+        break;
+    case 1:
+        typeOfLuck="moderately bad luck";
+        break;
+    case 2:
+        typeOfLuck="little bad luck";
+        break;
+    case 3:
+        typeOfLuck="little good luck";
+        break;
+    case 4:
+        typeOfLuck="moderate good luck";
+        break;
+    case 5:
+        typeOfLuck="very good luck";
+        break;
+    default:
+        avoidThis="Invalid luck type"
+        break;
+}
+
+
+let monthNum=(Math.floor(Math.random()*12));
+let futureMonth="";
+
+switch (monthNum) {
+    case 0:
+        futureMonth="January";
+        break;
+    case 1:
+        futureMonth="February";
+        break;
+    case 2:
+        futureMonth="March";
+        break;
+    case 3:
+        futureMonth="April";
+        break;
+    case 4:
+        futureMonth="May";
+        break;
+    case 5:
+        futureMonth="June";
+        break;
+    case 6:
+        futureMonth="July";
+        break;
+    case 7:
+        futureMonth="August";
+        break;
+    case 8:
+        futureMonth="September";
+        break;
+    case 9:
+        futureMonth="October";
+        break;
+    case 10:
+        futureMonth="November";
+        break;
+    case 11:
+        futureMonth="December";
+        break;
+
+    default:
+        futureMonth="Invalid month type"
+    break;
+}
+
+let today= new Date();
+let futureYear = today.getFullYear();
+
+if(monthNum <= today.getMonth())
+    futureYear++;
+
+let maxDay=0;
+
+if(monthNum===0 || monthNum===2 || monthNum===4 || monthNum===6 || monthNum===7 || monthNum===9 || monthNum===11)
+    maxDay=31;
+else if(monthNum===3 || monthNum===5 || monthNum===8 || monthNum===10)
+    maxDay=30;
+else if(monthNum===1)
+    maxDay=28;
+
+let futureDay = Math.floor(Math.random()*maxDay) + 1;
+
+console.log(`You will experience ${typeOfLuck} on ${futureMonth} ${futureDay}, ${futureYear}.`)
